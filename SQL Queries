@@ -9,5 +9,19 @@ select * from v$database;
 ##OR##
 select ora_database_name from dual;
 
-3.) sho
+3.) show databases;
+
+4.) To create a table in database , for a new user we have to grant privilages to that new user (called creating schema)
+# For new user 
+a.) $ sqlplus  /nolog
+SQL > conn sys as sysdba
+enter password of sysdba (superuser for oracle db)
+connected.
+SQL >  Grant create table to testuser ;
+
+b). connect to database with db user (eg. here testuser)
+create table TataMotors(modelname varchar2(200));
+
+
+
 
