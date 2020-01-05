@@ -1,13 +1,13 @@
 1.) Create Database Query -:
->> Create Database Automobiles ;
+SQL > Create Database Automobiles ;
 
 If Database with same name already exists check -: 
->> Create Database if not exists Automobiles ;
+SQL > Create Database if not exists Automobiles ;
 
 2.) To print current database name -:
-select * from v$database;
+SQL >  select * from v$database;
 ##OR##
-select ora_database_name from dual;
+SQL >  select ora_database_name from dual;
 
 3.) show databases;
 
@@ -17,10 +17,51 @@ a.) $ sqlplus  /nolog
 SQL > conn sys as sysdba
 enter password of sysdba (superuser for oracle db)
 connected.
-SQL >  Grant create table to testuser ;
+SQL > Grant create table to testuser ;
 
-b). connect to database with db user (eg. here testuser)
-create table TataMotors(modelname varchar2(200));
+b).To create a table in database connect to database with db user (eg. here testuser)
+
+SQL > create table TataMotors(modelname varchar2(200));
+_________________________________________________________________________________________________________
+5.) Alter a table -:   ALTER TABLE table_name action;
+
+5.1) Oracle ALTER TABLE ADD column -:   ALTER TABLE table_name ADD column_name type constraint;
+SQL > alter table tatamotors add falsecolumn varchar2(200);
+__________________________________________________________________________________________________________
+5.2) Oracle ALTER TABLE ADD multiplecolumns : To add multiple columns to a table at the same time, you place the new columns inside the parenthesis 
+SQL > ALTER TABLE table_name
+       ADD (
+       column_name type constraint,
+       column_name type constraint,
+        ...
+       );
+_______________________________________________________________________________________________________
+5.3) Oracle ALTER TABLE MODIFY column  -:  ALTER TABLE table_name MODIFY column_name type constraint;
+SQL > alter table TataMotors modify modelname not null;
+
+To modify multiple columns -:
+ ALTER TABLE table_name
+  MODIFY ( column_1 type constraint,
+          column_1 type constraint,
+         ...);
+__________________________________________________________________________________________________________
+5.4) Oracle ALTER TABLE DROP COLUMN -:    ALTER TABLE table_name DROP COLUMN column_name;
+SQL > alter table tatamotors drop column falsecolumn ; 
+
+To drop multiple columns at the same time -: 
+SQL > ALTER TABLE table_name DROP (column_1,column_2,...);
+____________________________________________________________________________________________________________
+5.5) Oracle ALTER TABLE RENAME column -:    ALTER TABLE table_name RENAME COLUMN column_name TO new_name;
+
+SQL > alter table tatamotors rename column flasecolumn to falsedelete ;
+
+___________________________________________________________________________________________________________
+5.6) Oracle ALTER TABLE RENAME table -: ALTER TABLE table_name RENAME TO new_table_name;
+
+SQL > alter table dummytable rename to testtable ;
+___________________________________________________________________________________________________________
+
+
 
 
 
