@@ -1,0 +1,13 @@
+1.) Create Database Query -:
+>> Create Database Automobiles ;
+
+If Database with same name already exists check -: 
+>> Create Database if not exists Automobiles ;
+
+2.) To print current database name -:
+select * from v$database;
+##OR##
+select ora_database_name from dual;
+
+3.) sho
+
