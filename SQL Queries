@@ -61,7 +61,9 @@ ________________________________________________________________________________
 SQL > alter table dummytable rename to testtable ;
 ___________________________________________________________________________________________________________
 
+6.) Inner Join to fetch information from two related tables.
 
+select 
 
 
 
