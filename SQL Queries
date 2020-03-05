@@ -63,7 +63,7 @@ ________________________________________________________________________________
 
 6.) Inner Join to fetch information from two related tables.
 
-select 
+Select * from tableone o inner join tabletwo t on (o.fk = t.pk) inner join tablethree th on (t.fk = th.pk) where conditions ;
 
 
 
